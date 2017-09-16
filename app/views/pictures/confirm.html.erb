@@ -1,0 +1,18 @@
+<h3>以下の内容で、よろしいですか？</h3>
+
+<%= form_for(@picture) do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image %>
+  <p>タイトル:<%= @picture.title %></p>
+  <p>本文:<%= @picture.content %></p>
+  <p>画像:<%= @picture.image %></p>
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= form_for(@picture, url: new_picture_path, method: 'get') do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image %>
+  <%= f.submit "もどる",name: 'back' %>
+<% end %>
