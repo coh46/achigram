@@ -14,15 +14,15 @@
   <% end %>
 
   <%= f.label :タイトル %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-control' %>
   <br>
   <%= f.label :本文 %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content, class: 'form-control' %>
   <br>
   <%= f.label :画像 %>
-  <%= f.file_field :image %>
+  <%= f.file_field :image, class: 'form-control' %>
   <br>
-  <%= f.submit %>
+  <%= f.submit '投稿内容を確認する', class: 'btn btn-primary btn-block' %>
 <% end %>
 
 <%= link_to "投稿一覧に戻る", pictures_path %>
