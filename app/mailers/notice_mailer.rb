@@ -8,7 +8,6 @@ class NoticeMailer < ApplicationMailer
   def sendmail_picture(picture)
     @picture = picture
 
-    mail to: "coh46r@gmail.com"
-         subject: '【Achigram】投稿されました！'
+    mail to: @picture.user.email, subject: '【Achigram】写真が投稿されました！'
   end
 end
