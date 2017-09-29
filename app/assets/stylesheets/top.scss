@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header {
   width: 100%;
-  background-color: #2c3e50;
+  color: black;
+  background-color: #FFFFFF;
   height: 54px;
 }
 
@@ -12,14 +13,14 @@ header {
 }
 .navbar {
     background-color: transparent;
-    color: white;
+    color: black;
     margin-bottom: 0px;
 }
 .navbar-default {
   .navbar-brand {
     color: #ccc;
     &:hover {
-      color: white;
+      color: black;
     }
   }
   .navbar-nav > li > a {
@@ -99,9 +100,9 @@ header {
 
 footer {
   width: 100%;
-  background-color:#2c3e50;
+  background-color: #FFFFFF;
   padding: 20px 0 10px 0;
-  color: white;
+  color: black;
   margin: auto;
   padding-bottom: 10px;
   font-size: 12px;

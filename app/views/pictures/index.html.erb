@@ -5,12 +5,17 @@
       <%= link_to "投稿する", new_picture_path, class: 'btn btn-default' %>
     <% @pictures.each do |picture| %>
     <div class="row">
+      <p class="profile-image"><%= profile_img(picture.user) %><%= picture.user.name %></p>
       <h4><strong><%= picture.title %></strong></h4>
-      <p>本文:<%= picture.content %></p>
-      <p>画像:<%= image_tag(picture.image) %></p>
+      <p><%= picture.content %></p>
+      <p class="post-image"><%= image_tag(picture.image) %></p>
       <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-sm btn-success' %>
       <%= link_to '削除', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
     </div>
     <% end %>
   </div>
+</div>
+
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
 </div>
