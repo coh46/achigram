@@ -4,16 +4,15 @@
   　<%= form_for(@picture) do |f| %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
-      <%= f.hidden_field :image %>
+      <%= hidden_field_tag :"cache[image]",@picture.image.cache_name %>
       <p>タイトル:<%= @picture.title %></p>
       <p>本文:<%= @picture.content %></p>
-      <p>画像:<%= @picture.image %></p>
+      <%= image_tag(@picture.image.url) %>
       <%= f.submit "投稿する",class: 'btn btn-primary btn-block' %>
     <% end %>
     <%= form_for(@picture, url: new_picture_path, method: 'get') do |f| %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
-      <%= f.hidden_field :image %>
       <%= f.submit "もどる",name: 'back', class: 'btn btn-default btn-block'  %>
     <% end %>
   </div>
