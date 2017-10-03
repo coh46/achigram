@@ -10,8 +10,10 @@
       <h4><strong><%= picture.title %></strong></h4>
       <p><%= picture.content %></p>
       <p class="post-image"><%= image_tag(picture.image) %></p>
-      <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-sm btn-success' %>
-      <%= link_to '削除', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+      <% if current_user.id == picture.user_id %>
+        <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-sm btn-success' %>
+        <%= link_to '削除', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-sm btn-danger' %>
+      <% end %>
     </div>
     <% end %>
   </div>
